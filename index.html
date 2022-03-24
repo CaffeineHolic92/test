@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIS.Edu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        // iframe resize
+        function autoResize(i) {
+            (i).height = 0;
+            var iframeHeight =
+                (i).contentWindow.document.body.scrollHeight;
+            (i).height = iframeHeight + 20;
+        }
+    </script>
+
+    <!-- 스크롤 애니메이션 -------------------------------------------------->
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        })
+    </script>
+    <!-- 스크롤 애니메이션 끝-->
+
+    <style>
+        /*폰트 이름 : Jua*/
+        @import url(https://fonts.googleapis.com/css?family=Jua);
+
+        .container {
+            padding-bottom: 80px;
+            padding-top :80px;
+        }
+
+        #Map {
+            padding-top: 80px;
+        }
+
+        * {
+            font-family: Jua;
+        }
+
+        .subject {
+            border: 10px solid rgb(153, 153, 153);
+            margin-bottom: 25px;
+            width: 80%;
+            height: 80%;
+            opacity: 0.7;
+        }
+
+        .subject:hover {
+            border-color: #222;
+        }
+
+        .carousel-inner img {
+            /* make all photos black and white */
+            width: 100%;
+            height: 900px;
+            /* Set width to 100% */
+            margin: auto;
+        }
+
+        .carousel-caption {
+            color: rgb(230, 227, 227) !important;
+            text-shadow: 3px 3px 3px rgb(0, 0, 0);
+        }
+
+        footer {
+            background-color: #2d2d30;
+            color: #f5f5f5;
+        }
+
+        footer a {
+            color: #f5f5f5;
+        }
+
+        footer a:hover {
+            color: #777;
+            text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+            .carousel-caption {
+                display: none;
+                /* Hide the carousel text when the screen is less than 767 pixels wide */
+            }
+        }
+
+        #iframe1 {
+            width: 90%;
+        }
+
+        /*767px 이하일 때 아래 여백 주기*/
+        @media screen and (max-width: 767px) {
+
+            #iframe1 {
+                width: 100%;
+            }
+
+            .carousel-inner {
+                margin: 30px;
+            }
+        }
+    </style>
+
+
+</head>
+
+
+<body id="myPage">
+    <!-- navbar--------------------------------------------------->
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #2D2D30;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar" style="margin:3px;"></span>
+                    <span class="icon-bar" style="margin:3px;"></span>
+                    <span class="icon-bar" style="margin:3px;"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="font-size: 25px;">TIS.Edu</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" style="font-size: 20px;">
+                    <li><a href="#About" data-toggle="collapse" data-target=".navbar-collapse.in">About</a></li>
+                    <li><a href="#Curriculumn" data-toggle="collapse" data-target=".navbar-collapse.in">Curriculumn</a>
+                    </li>
+                    <li><a href="#Map" data-toggle="collapse" data-target=".navbar-collapse.in">Map</a></li>
+                    <li><a href="#Board" data-toggle="collapse" data-target=".navbar-collapse.in">Board</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar 끝-->
+
+    <!-- 캐러셀 ----------------------------------------------------->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div id="About" class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="image/pic01.jpg" alt="class">
+                <div class="carousel-caption">
+                    <h3>Android</h3>
+                    <p>Andorid Native App Development</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="image/pic02.jpg" alt="Chicago">
+                <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago - A night we won't forget.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="image/pic03.jpg" alt="Los Angeles">
+                <div class="carousel-caption">
+                    <h3>LA</h3>
+                    <p>Even though the traffic was a mess, we had the best time.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="image/pic04.jpg" alt="Los Angeles">
+                <div class="carousel-caption">
+                    <h3>LA</h3>
+                    <p>Even though the traffic was a mess, we had the best time.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="image/pic05.jpg" alt="Los Angeles">
+                <div class="carousel-caption">
+                    <h3>Nature</h3>
+                    <p>Nature never deceives us. It is always we who deceive ourselves.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- 캐러셀 끝 -->
+
+    <div id="Curriculumn" class="container text-center">
+        <h1 style="font-size: 50px;">TIS정보기술 교육센터</h1>
+        <p style="font-size: 30px;">TIS 정보기술 교육센터는 정부지원 IT전문 교육기관 입니다.</p>
+    </div>
+
+    <div class="container text-center">
+        <h3 style="font-size: 45px; letter-spacing: 8px; text-shadow: 2px 2px 5px;">교육과목</h3>
+        <p style="font-size: 30px;">국가기반기술 전문과정</p><br>
+        <div class="row" style="font-size: 35px; letter-spacing: 5px;">
+            <div class="col-sm-4 ">
+                <p><strong>HTML5</strong></p><br>
+                <img class="img-circle subject" src="image/html5.png" alt="Random Name" style="width: 255px;">
+            </div>
+            <div class="col-sm-4">
+                <p><strong>CSS3</strong></p><br>
+                <img class="img-circle subject" src="image/CSS3.png" alt="Random Name" style="width: 255px;">
+            </div>
+            <div class="col-sm-4">
+                <p><strong>Javascript</strong></p><br>
+                <img class="img-circle subject" src="image/Javascript.png" alt="Random Name" style="width: 255px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- 카카오맵 -------------------------------------------------------------------------------->
+    <div id="Map" class="container-fluid" style="text-align: center; font-size: 15px; margin-bottom: 8px;">
+        <div style="font-size:30px;">오시는길</div>
+        <div style="font-size:18px;">(우: 70255) 서울특별시 영등포구 선유로 130 (지번 : 양평동 3가 5-4번지), 에이스하이테크시티3차 2층(교무실 : 212호, 강의실:
+            202호, 210호, 211호)</div>
+        <div id="kakaomap" style="width: 100%; height: 500px;"></div>
+        <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eae7edda253449ae960c8d5e4ef62bc1"></script>
+        <script>
+            var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
+                mapOption = {
+                    center: new daum.maps.LatLng(37.52520768305657, 126.89136048064893), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                };
+
+            var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+            // 마커가 표시될 위치입니다 
+            var markerPosition = new daum.maps.LatLng(37.52520768305657, 126.89136048064893);
+
+            // 마커를 생성합니다
+            var marker = new daum.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+        </script>
+        <!-- 카카오맵 끝-->
+
+    </div>
+
+    <!-- 게시판 ----------------------------------------------------------------------->
+    <div id="Board" class="text-center">
+        <h3 class="text-center" style="font-size: 35px;">BOARD</h3>
+        <iframe id="iframe1" src="http://prdk.dothome.co.kr/g5/bbs/board.php?bo_table=board001"
+            onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        <iframe id="iframe1" src="http://prdk.dothome.co.kr/g5/bbs/board.php?bo_table=board002"
+            onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    </div>
+    <!-- 게시판 끝 -->
+
+    <!-- Footer ----------------------------------------------------------->
+    <footer class="text-center" style="padding-top:10px;">
+        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br>
+        <b style="font-size:20px; ">TIS.Edu &copy; All rights reserved.</b>
+    </footer>
+    <!-- Footer 끝 -->
+
+</body>
+
+</html>
